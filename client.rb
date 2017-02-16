@@ -17,8 +17,10 @@ comments_json.each do |comment|
   commentsByPost[comment["postId"]].push(comment)
 end
 
+postComments = {}
 posts_json.each do |post|
-  puts commentsByPost[post["id"]]
+  # puts commentsByPost[post["id"]]
+  postComments ||= commentsByPost[post["id"]]
 end
 
-# puts commentsByPost[100]
+puts postComments
